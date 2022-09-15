@@ -19,13 +19,14 @@ db.serialize(function () {
 app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
-// 
+// start app by using node app.js
 app.post('/login', function (req, res) {
 	const username = req.body.username;
 	const password = req.body.password;
     const query = `SELECT title FROM user WHERE username= '${username}' AND password='${password}'`;
 	//const query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";
     //unknown' OR '1'='1
+
 
 	console.log("username: " + username);
 	console.log("password: " + password);
